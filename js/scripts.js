@@ -1,35 +1,22 @@
 //Business logic
-var countAdd = function(number) {
-  if (number % number2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
+
 
 $(document).ready(function() {
   $("form#countup").submit(function(event) {
     event.preventDefault();
+    debugger;
     var number = parseInt($("input#number").val());
     var number2 = parseInt($("input#number2").val());
-    var result = countAdd(number);
+    var multiples = [];
 
-    $(".number").text(number)
-      if (!result) {
-        $(".not").text("not");
-      } else {
-        $(".not").text("");
-      }
+  for (var i = number2; i <= number; i += number2) {
+    if (number % i === 0) {
+    multiples.push(i);
+  }
 
 
-    $(".number2").text(number);
-      if (!result) {
-        $(".not").text("not");
-      } else {
-        $(".not").text("");
-      }
+    $("#result").text(multiples);
 
-    $("#result").show();
-
-  });
+  };
+ });
 });
